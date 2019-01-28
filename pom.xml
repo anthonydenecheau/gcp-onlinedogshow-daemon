@@ -10,7 +10,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 
-    <groupId>com.scc</groupId>
+    <groupId>com.scc.pub</groupId>
 	<artifactId>pub-onlinedogshow-daemon</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>pub-onlinedogshow-daemon</name>
@@ -20,7 +20,7 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<java.version>1.8</java.version>
 		<spring-cloud.version>Greenwich.RC2</spring-cloud.version>
-		<start-class>com.scc.Application</start-class>
+		<start-class>com.scc.pub.Application</start-class>
 		<docker.image.name>anthonydenecheau/pub-onlinedogshow-daemon</docker.image.name>
 		<docker.image.tag>${env.BUILD_NAME}</docker.image.tag>
 	</properties>
@@ -32,6 +32,19 @@
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
 
+	    <dependency>
+	      	<groupId>org.springframework.boot</groupId>
+	      	<artifactId>spring-boot-starter-actuator</artifactId>
+	    </dependency>
+	    <dependency>
+	      	<groupId>org.springframework.cloud</groupId>
+	      	<artifactId>spring-cloud-starter-config</artifactId>
+	    </dependency>
+	    <dependency>
+	      	<groupId>org.springframework.cloud</groupId>
+	      	<artifactId>spring-cloud-config-client</artifactId>
+	    </dependency>
+	    
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-gcp-starter-pubsub</artifactId>

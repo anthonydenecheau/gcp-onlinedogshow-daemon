@@ -23,7 +23,7 @@ before_install:
 - openssl aes-256-cbc -K $encrypted_1e60cba3372a_key -iv $encrypted_1e60cba3372a_iv
   -in lof-ws-test-5c33f02ea8c8.json.enc -out ${TRAVIS_HOME}/lof-ws-test-5c33f02ea8c8.json -d
 - gem install travis -v 1.8.9 --no-document
-- export BUILD_NAME=gcp-onlinedogshow-daemon-$TRAVIS_BRANCH-$(date -u "+%Y%m%d%H%M%S")-$TRAVIS_BUILD_NUMBER
+- export BUILD_NAME=pub-onlinedogshow-daemon-$TRAVIS_BRANCH-$(date -u "+%Y%m%d%H%M%S")-$TRAVIS_BUILD_NUMBER
 - export GOOGLE_APPLICATION_CREDENTIALS=${TRAVIS_HOME}/lof-ws-test-5c33f02ea8c8.json
 script:
 - sh scripts/travis/tag_build.sh
